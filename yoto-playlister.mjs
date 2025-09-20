@@ -3,7 +3,7 @@ const hereParams = new URLSearchParams(window.location.search);
 const clientId = "YtRJRPGAptLz7BuZWPY8ihNsOKAfDEve";
 const code = hereParams.get('code');
 
-const safeParse = s => { try { return JSON.parse(atob(s)); } finally { return ''; } };
+const safeParse = s => { try { return JSON.parse(atob(s)); } catch (err) { return { parseError: err }; } };
 
 const state = safeParse(hereParams.get('state'));
 
