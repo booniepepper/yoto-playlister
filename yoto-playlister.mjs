@@ -2,7 +2,10 @@ const here = window.location.origin + window.location.pathname;
 const hereParams = new URLSearchParams(window.location.search);
 const clientId = "YtRJRPGAptLz7BuZWPY8ihNsOKAfDEve";
 const code = hereParams.get('code');
-const state = JSON.parse(atob(hereParams.get('state') || '') || '{}');
+
+const safeParse = s => { try { return JSON.parse(atob(s)); } finally { return ''; } };
+
+const state = safeParse(hereParams.get('state'));
 
 const loginUrl = new URL("https://login.yotoplay.com/authorize");
 const addParams = (url, params) => Object.entries(params).forEach(([key, param]) => url.searchParams.append(key, param));
@@ -26,4 +29,4 @@ auth.href = loginUrl.href;
 const debug = document.createElement('pre');
 debug.innerText = JSON.stringify({ code, state }, null, 2);
 
-[auth, debug].forEach(main.appendChild);
+[auth, debug].forEach(elem => main.appendChild(elem));
