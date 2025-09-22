@@ -3,10 +3,10 @@ const hereParams = new URLSearchParams(window.location.search);
 const clientId = "YtRJRPGAptLz7BuZWPY8ihNsOKAfDEve";
 const code = hereParams.get('code');
 
-const safeParse = s => { try { return JSON.parse(atob(s)); } catch (err) { return { parseError: err }; } };
 const encode = s => btoa(JSON.stringify(s));
+const decode = s => { try { return JSON.parse(atob(s)); } catch (err) { return { parseError: err }; } };
 
-const state = safeParse(hereParams.get('state'));
+const state = decode(hereParams.get('state'));
 
 const loginUrl = new URL("https://login.yotoplay.com/authorize");
 const addParams = (url, params) => Object.entries(params).forEach(([key, param]) => url.searchParams.append(key, param));
