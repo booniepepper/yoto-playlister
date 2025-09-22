@@ -4,6 +4,7 @@ const clientId = "YtRJRPGAptLz7BuZWPY8ihNsOKAfDEve";
 const code = hereParams.get('code');
 
 const safeParse = s => { try { return JSON.parse(atob(s)); } catch (err) { return { parseError: err }; } };
+const encode = s => btoa(JSON.stringify(s));
 
 const state = safeParse(hereParams.get('state'));
 
@@ -15,7 +16,7 @@ addParams(loginUrl, {
   response_type: "code",
   client_id: clientId,
   redirect_uri: here,
-  state: "def"
+  state: encode({ hello: "world" })
 });
 
 /* INIT */
