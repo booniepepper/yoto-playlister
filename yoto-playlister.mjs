@@ -19,6 +19,9 @@ addParams(loginUrl, {
   state: encode({ hello: "world" })
 });
 
+const content = await fetch('https://api.yotoplay.com/content/mine', { Authorization: `Bearer ${code}` });
+console.log({ content });
+
 /* INIT */
 
 const main = document.querySelector('main');
