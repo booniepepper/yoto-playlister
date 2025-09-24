@@ -12,7 +12,7 @@ const loginUrl = new URL("https://login.yotoplay.com/authorize");
 const addParams = (url, params) => Object.entries(params).forEach(([key, param]) => url.searchParams.append(key, param));
 addParams(loginUrl, {
   audience: "https://api.yotoplay.com",
-  scope: "openid",
+  scope: "openid profile",
   response_type: "code",
   client_id: clientId,
   redirect_uri: here,
