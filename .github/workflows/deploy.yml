@@ -22,5 +22,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ vars.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws s3 sync --delete ./static "${{ vars.BUCKET }}"" \
+          aws s3 sync --delete ./static "${{ vars.BUCKET }}" \
           && aws cloudfront create-invalidation --paths "/*" --distribution-id "${{ vars.CFDIST }}"
