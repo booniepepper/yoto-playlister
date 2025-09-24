@@ -20,7 +20,7 @@ addParams(loginUrl, {
 });
 
 if (code) {
-  const response = await fetch('https://api.yoto-playlister.so.dang.cool/prod/playlists', { Authorization: `Bearer ${code}` });
+  const response = await fetch('https://api.yoto-playlister.so.dang.cool/prod/playlists', { headers: { Authorization: `Bearer ${code}` } });
   const body = await response.json();
   console.log({ response, body });
 }
