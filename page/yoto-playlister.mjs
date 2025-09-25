@@ -64,7 +64,7 @@ myos.cards.forEach(json => {
   const card = document.createElement('div');
   card.classList.add('card');
   card.innerHTML = `
-    <h1>${json.title}</h1>
+    <h4>${json.title}</h4>
     <label>Card Id</label><pre>${json.cardId}</pre>
     <img src="${json.metadata.cover.imageL}" width="200" height="317">
   `;
