@@ -74,8 +74,17 @@ myos.cards.forEach(async json => {
   cards.appendChild(card);
 
   const tracks = document.createElement('ol');
+  card.appendChild(tracks);
+
   const myoTracks = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos/tracks", { headers: { device, 'card-id': cardId }}).then(r => r.json());
 
-  console.log({ cardId, myoTracks });
-  
+  myoTracks.content.chapters.forEach(json => {
+    const { title: trackTitle } = json;
+    const track = document.createElement('li');
+    // TODO: Fetch/cache image URLs
+    track.innerHTML = `
+      <label>${trackTitle}</label>
+    `;
+    tracks.appendChild(track);
+  });
 });
