@@ -31,13 +31,17 @@ addParams(loginUrl, {
 
 const main = document.querySelector('main');
 
+const cards = document.createElement('div');
+cards.id = "myo_cards";
+
 const auth = document.createElement('a');
 auth.innerText = "Authorize";
 auth.href = loginUrl.href;
 
 const debug = document.createElement('pre');
 
-[auth, debug].forEach(elem => main.appendChild(elem));
+[auth, cards, debug].forEach(elem => main.appendChild(elem));
+
 const code = hereParams.get('code');
 if (code) {
   const response = await fetchJson('https://api.yoto-playlister.so.dang.cool/prod/session', {
@@ -53,6 +57,17 @@ if (code) {
   history.pushState(null, null, here);
 }
 debug.innerText = JSON.stringify({ code, state }, null, 2);
-
-const { cards } = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos", { headers: { device }}).then(r => r.json());
+const myos = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos", { headers: { device }}).then(r => r.json());
 debug.innerText += "/n" + JSON.stringify({ cards }, null, 2);
+
+myos.cards.forEach(json => {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.innerHTML = `
+    <h1>${json.title}</h1>
+    <label>Card Id</label><pre>${json.cardId}</pre>
+    <img src="${json.metadata.cover.imageL}">
+  `;
+
+  cards.appendChild(card);
+});
