@@ -1,11 +1,19 @@
-const here = window.location.origin + window.location.pathname;
-const hereParams = new URLSearchParams(window.location.search);
-const clientId = "YtRJRPGAptLz7BuZWPY8ihNsOKAfDEve";
-const code = hereParams.get('code');
+import {clientId} from './constants.mjs';
+
+let device = localStorage.getItem('device');
+if (!device) {
+  device = crypto.randomUUID();
+  localStorage.setItem('device', device);
+}
+
 
 const encode = s => btoa(JSON.stringify(s));
 const decode = s => { try { return JSON.parse(atob(s)); } catch (err) { return { parseError: err }; } };
 
+const fetchJson = async (url, options) => await fetch(url, options).then(r => r.json());
+
+const here = window.location.origin + window.location.pathname;
+const hereParams = new URLSearchParams(window.location.search);
 const state = decode(hereParams.get('state'));
 
 const loginUrl = new URL("https://login.yotoplay.com/authorize");
@@ -19,20 +27,16 @@ addParams(loginUrl, {
   state: encode({ hello: "world" })
 });
 
+const code = hereParams.get('code');
 if (code) {
-  const { access_token, refresh_token } = await fetch('https://login.yotoplay.com/oauth/token', {
+  const response = await fetchJson('https://api.yoto-playlister.so.dang.cool/prod/session', {
+    method: 'PUT',
     headers: {
-      Authorization: `Bearer ${code}`,
-    },
-  }).then(r => r.json());
-  
-  const response = await fetch('https://api.yoto-playlister.so.dang.cool/prod/playlists', {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
+      device,
+      code,
     },
   });
-  const body = await response.json();
-  console.log({ response, body });
+  console.log({ response });
 }
 
 /* INIT */
