@@ -74,7 +74,7 @@ myos.cards.forEach(async json => {
   cards.appendChild(card);
 
   const tracks = document.createElement('ol');
-  const myoTracks = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos/tracks", { headers: { device, 'client-id': clientId }}).then(r => r.json());
+  const myoTracks = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos/tracks", { headers: { device, 'card-id': cardId }}).then(r => r.json());
 
   console.log({ cardId, myoTracks });
   
