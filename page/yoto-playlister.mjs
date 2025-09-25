@@ -37,6 +37,9 @@ if (code) {
     },
   });
   console.log({ response });
+
+  // Drop code fron URL to prevent sharing by accident
+  history.pushState(null, null, here);
 }
 
 /* INIT */
