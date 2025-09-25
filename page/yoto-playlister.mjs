@@ -60,14 +60,22 @@ debug.innerText = JSON.stringify({ code, state }, null, 2);
 const myos = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos", { headers: { device }}).then(r => r.json());
 debug.innerText += "/n" + JSON.stringify({ cards }, null, 2);
 
-myos.cards.forEach(json => {
+myos.cards.forEach(async json => {
+  const { cardId, title: cardTitle } = json;
+  const cardImg = json.metadata.cover.imageL;
+  
   const card = document.createElement('div');
   card.classList.add('card');
   card.innerHTML = `
-    <h4>${json.title}</h4>
-    <label>Card Id</label><pre>${json.cardId}</pre>
-    <img src="${json.metadata.cover.imageL}" width="200" height="317">
+    <h4>${cardTitle}</h4>
+    <label>Card Id</label><pre>${cardId}</pre>
+    <img src="${cardImg}" width="200" height="317">
   `;
-
   cards.appendChild(card);
+
+  const tracks = document.createElement('ol');
+  const myoTracks = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos/tracks", { headers: { device, 'client-id': clientId }}).then(r => r.json());
+
+  console.log({ cardId, myoTracks });
+  
 });
