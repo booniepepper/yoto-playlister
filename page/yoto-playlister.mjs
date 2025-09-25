@@ -29,7 +29,7 @@ addParams(loginUrl, {
 
 /* INIT */
 
-const main = document.querySelector('main');
+const myStuff = document.querySelector('#my_stuff');
 
 const cards = document.createElement('div');
 cards.id = "myo_cards";
@@ -40,7 +40,7 @@ auth.href = loginUrl.href;
 
 const debug = document.createElement('pre');
 
-[auth, cards, debug].forEach(elem => main.appendChild(elem));
+[auth, cards, debug].forEach(elem => myStuff.appendChild(elem));
 
 const code = hereParams.get('code');
 if (code) {
