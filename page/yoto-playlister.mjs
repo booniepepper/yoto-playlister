@@ -66,7 +66,7 @@ myos.cards.forEach(json => {
   card.innerHTML = `
     <h1>${json.title}</h1>
     <label>Card Id</label><pre>${json.cardId}</pre>
-    <img src="${json.metadata.cover.imageL}">
+    <img src="${json.metadata.cover.imageL}" width="200" height="317">
   `;
 
   cards.appendChild(card);
