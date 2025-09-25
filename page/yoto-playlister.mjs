@@ -1,11 +1,10 @@
-import {clientId} from './constants.mjs';
+import { clientId } from './constants.mjs';
 
 let device = localStorage.getItem('device');
 if (!device) {
   device = crypto.randomUUID();
   localStorage.setItem('device', device);
 }
-
 
 const encode = s => btoa(JSON.stringify(s));
 const decode = s => { try { return JSON.parse(atob(s)); } catch (err) { return { parseError: err }; } };
@@ -27,6 +26,18 @@ addParams(loginUrl, {
   state: encode({ hello: "world" })
 });
 
+
+/* INIT */
+
+const main = document.querySelector('main');
+
+const auth = document.createElement('a');
+auth.innerText = "Authorize";
+auth.href = loginUrl.href;
+
+const debug = document.createElement('pre');
+
+[auth, debug].forEach(elem => main.appendChild(elem));
 const code = hereParams.get('code');
 if (code) {
   const response = await fetchJson('https://api.yoto-playlister.so.dang.cool/prod/session', {
@@ -41,16 +52,7 @@ if (code) {
   // Drop code fron URL to prevent sharing by accident
   history.pushState(null, null, here);
 }
-
-/* INIT */
-
-const main = document.querySelector('main');
-
-const auth = document.createElement('a');
-auth.innerText = "Authorize";
-auth.href = loginUrl.href;
-
-const debug = document.createElement('pre');
 debug.innerText = JSON.stringify({ code, state }, null, 2);
 
-[auth, debug].forEach(elem => main.appendChild(elem));
+const { cards } = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos", { headers: { device }}).then(r => r.json());
+debug.innerText += "/n" + JSON.stringify({ cards }, null, 2);
