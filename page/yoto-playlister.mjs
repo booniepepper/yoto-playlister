@@ -20,9 +20,15 @@ addParams(loginUrl, {
 });
 
 if (code) {
-  const response = await fetch('https://api.yoto-playlister.so.dang.cool/prod/playlists', {
+  const { access_token, refresh_token } = await fetch('https://login.yotoplay.com/oauth/token', {
     headers: {
       Authorization: `Bearer ${code}`,
+    },
+  }).then(r => r.json());
+  
+  const response = await fetch('https://api.yoto-playlister.so.dang.cool/prod/playlists', {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
     },
   });
   const body = await response.json();
