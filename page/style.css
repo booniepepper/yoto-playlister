@@ -1,3 +1,31 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: #f45436;
+}
+
+main {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+#my_stuff, #public_stuff {
+  width: 50vw;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+#my_stuff {
+  color: #333;
+  background-color: #fff;
+}
+
+#public_stuff {
+  color: #444;
+  background-color: #f5f0f0;
+}
+
 .card > img {
   border-radius: 10px;
   background-color: 000c;
