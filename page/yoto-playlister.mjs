@@ -66,15 +66,22 @@ myos.cards.forEach(async json => {
   
   const card = document.createElement('div');
   card.classList.add('card');
+  card.id = cardId;
   card.innerHTML = `
     <h4>${cardTitle}</h4>
-    <label>Card Id</label><pre>${cardId}</pre>
-    <img src="${cardImg}" width="200" height="317">
+    <div class="card-metadata">
+      <label>Card Id</label>
+      <pre>${cardId}</pre>
+    </div>
+    <div class="card-main">
+      <img src="${cardImg}" width="200" height="317">
+    </div>
   `;
   cards.appendChild(card);
 
   const tracks = document.createElement('ol');
-  card.appendChild(tracks);
+  tracks.class = "tracklist";
+  card.querySelector('.card-main').appendChild(tracks);
 
   const myoTracks = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos/tracks", { headers: { device, 'card-id': cardId }}).then(r => r.json());
 

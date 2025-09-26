@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
   color: #fff;
   background-color: #f45436;
+  margin: 0;
 }
 
 main {
@@ -27,6 +28,11 @@ main {
 }
 
 .card > img {
+  display: grid;
   border-radius: 10px;
   background-color: 000c;
+}
+
+.tracklist {
+  text-align: left;
 }
