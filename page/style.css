@@ -27,7 +27,7 @@ main {
   background-color: #f5f0f0;
 }
 
-.card > img {
+img.yoto-card {
   display: grid;
   border-radius: 10px;
   background-color: 000c;

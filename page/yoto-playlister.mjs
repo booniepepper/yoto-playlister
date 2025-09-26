@@ -74,7 +74,7 @@ myos.cards.forEach(async json => {
       <pre>${cardId}</pre>
     </div>
     <div class="card-main">
-      <img src="${cardImg}" width="200" height="317">
+      <img class="yoto-card" src="${cardImg}" width="200" height="317">
     </div>
   `;
   cards.appendChild(card);
