@@ -28,9 +28,8 @@ main {
 }
 
 img.yoto-card {
-  display: grid;
   border-radius: 10px;
-  background-color: 000c;
+  background-color: #000c;
 }
 
 .tracklist {
