@@ -1,4 +1,4 @@
-# ![yay](https://raw.githubusercontent.com/booniepepper/yoto-playlister/refs/heads/core/page/favicon.ico) Yoto Playlister
+# ![yay](https://raw.githubusercontent.com/booniepepper/yoto-playlister/refs/heads/core/page/logo-orange.svg) Yoto Playlister
 
 A website that lets people share their playlist content!
 
