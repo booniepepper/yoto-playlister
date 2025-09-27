@@ -1,1 +1,1 @@
-export const clientId = "YtRJRPGAptLz7BuZWPY8ihNsOKAfDEve";
+../common/constants.mjs
