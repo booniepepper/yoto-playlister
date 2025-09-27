@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="140.00005mm"
-   height="140mm"
-   viewBox="0 0 140.00005 140"
+   width="7.4083333mm"
+   height="7.4083414mm"
+   viewBox="0 0 7.4083333 7.4083414"
    version="1.1"
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
@@ -13,57 +13,60 @@
      id="defs1" />
   <g
      id="layer1"
-     transform="translate(-19.999999,-99.999998)">
+     transform="translate(-20,-100)">
     <path
        id="rect1"
-       style="fill:#ffffff;stroke-width:0.31575"
-       d="m 20,100 50,25 -50,25 z" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.146354"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0167084"
+       d="m 20,100 2.645832,1.32292 L 20,102.64583 Z" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.00774456"
        id="path1-8-2"
-       cx="30"
-       cy="170"
-       r="10" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.146354"
+       cx="20.529167"
+       cy="103.70417"
+       rx="0.52916646"
+       ry="0.5291664" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.00774456"
        id="path1-8-6"
-       cx="30"
-       cy="200"
-       r="10" />
-    <circle
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.146354"
+       cx="20.529167"
+       cy="105.29166"
+       rx="0.52916646"
+       ry="0.5291664" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.00774456"
        id="path1-8-4"
-       cx="30"
-       cy="230"
-       r="10" />
+       cx="20.529167"
+       cy="106.87917"
+       rx="0.52916646"
+       ry="0.5291664" />
     <path
        id="rect2"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.284934"
-       d="m 52.360111,104.99979 20.000847,10.00043 h 87.639092 v -10.00043 z" />
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0150778"
+       d="m 21.712389,100.26457 1.058377,0.52919 h 4.637567 v -0.52919 z" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.284934"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0150778"
        id="rect2-8"
-       width="110"
-       height="10"
-       x="50"
-       y="225" />
+       width="5.8208313"
+       height="0.5291664"
+       x="21.5875"
+       y="106.61458" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.284934"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0150778"
        id="rect2-8-6"
-       width="110"
-       height="10"
-       x="50"
-       y="195" />
+       width="5.8208313"
+       height="0.5291664"
+       x="21.5875"
+       y="105.02708" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.284934"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0150778"
        id="rect2-8-61"
-       width="110"
-       height="10"
-       x="50"
-       y="165" />
+       width="5.8208313"
+       height="0.5291664"
+       x="21.5875"
+       y="103.43958" />
     <path
        id="rect2-8-65"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.284934"
-       d="m 72.360958,135.00003 -20.00033,9.9999 H 160.00005 v -9.9999 z" />
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0150778"
+       d="m 22.770766,101.85208 -1.05835,0.52917 h 5.695917 v -0.52917 z" />
   </g>
 </svg>
