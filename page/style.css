@@ -27,6 +27,25 @@ main {
   background-color: #f5f0f0;
 }
 
+#myo_cards {
+  display: grid;
+  place-items: center;
+}
+
+table.card {
+  margin: 2em;
+  padding: 2em;
+  border-radius: 2em;
+}
+
+table.card:nth-child(odd) {
+  background-color: #f5f0f0;
+}
+
+table.card:nth-child(even) {
+  border: solid 1em #f5f0f0;
+}
+
 img.yoto-card {
   border-radius: 10px;
   background-color: #000c;
