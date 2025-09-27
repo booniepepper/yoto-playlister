@@ -64,24 +64,30 @@ myos.cards.forEach(async json => {
   const { cardId, title: cardTitle } = json;
   const cardImg = json.metadata.cover.imageL;
   
-  const card = document.createElement('div');
+  const card = document.createElement('table');
   card.classList.add('card');
   card.id = cardId;
   card.innerHTML = `
-    <h4>${cardTitle}</h4>
-    <div class="card-metadata">
-      <label>Card Id</label>
-      <pre>${cardId}</pre>
-    </div>
-    <div class="card-main">
-      <img class="yoto-card" src="${cardImg}" width="200" height="317">
-    </div>
-  `;
+    <thead>
+      <tr>
+        <th colspan="2"><h4>${cardTitle}</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="right">Card Id</td>
+        <td class="left"><pre>${cardId}</pre></td>
+      </tr>
+      <tr>
+        <td><img class="yoto-card" src="${cardImg}" width="200" height="317"></td>
+        <td class="tracklist left"></td>
+      </tr>
+    </tbody>`;
   cards.appendChild(card);
 
   const tracks = document.createElement('ol');
   tracks.class = "tracklist";
-  card.querySelector('.card-main').appendChild(tracks);
+  card.querySelector('.tracklist').appendChild(tracks);
 
   const myoTracks = await fetch("https://api.yoto-playlister.so.dang.cool/prod/myos/tracks", { headers: { device, 'card-id': cardId }}).then(r => r.json());
 
