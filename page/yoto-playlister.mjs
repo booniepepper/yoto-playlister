@@ -82,8 +82,11 @@ myos.cards.forEach(async json => {
         <td><img class="yoto-card" src="${cardImg}" width="200" height="317"></td>
         <td class="tracklist left"></td>
       </tr>
-    </tbody>
-    <input type="button">Save</input>`;
+      <tr>
+        <td><input type="button" value="Create Public Playlist"></td>
+        <td><input type="button" value="Save in my Account"></td>
+      </tr>
+    </tbody>`;
 
   cards.appendChild(card);
 
