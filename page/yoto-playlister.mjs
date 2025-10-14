@@ -82,7 +82,9 @@ myos.cards.forEach(async json => {
         <td><img class="yoto-card" src="${cardImg}" width="200" height="317"></td>
         <td class="tracklist left"></td>
       </tr>
-    </tbody>`;
+    </tbody>
+    <input type="button">Save</input>`;
+
   cards.appendChild(card);
 
   const tracks = document.createElement('ol');
@@ -96,7 +98,7 @@ myos.cards.forEach(async json => {
     const track = document.createElement('li');
     // TODO: Fetch/cache image URLs
     track.innerHTML = `
-      <label>${trackTitle}</label>
+      <label contenteditable="plaintext-only">${trackTitle}</label>
     `;
     tracks.appendChild(track);
   });
